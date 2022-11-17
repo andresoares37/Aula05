@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class TeacherHelper {
 
-	public static final double horaAula = 17.50;
+	public static final double HORA_AULA = 17.50;
 	//final: transforma a variável horaAula em constante
 	public static void main(String[] args) {
 		int opcao=0, numeroAulas, qtdeAlunos, i;
@@ -28,6 +28,8 @@ public class TeacherHelper {
 				 * http://www1.sinprosp.org.br/guia_consultas.asp?mat=8*/
 				System.out.println("Para calcular seu sal�rio base precisamos saber quantas aulas semanais o professor tem na institui��o");
 				numeroAulas = leitor.nextInt();
+				System.out.println("É preciso informar, também, o valor da hora aula praticado na instituição");
+				double horaAula = leitor.nextDouble();
 				salarioBase = numeroAulas * 4.5 * horaAula;
 				horaAtividade = salarioBase * 0.05;
 				descansoSemanalRemunerado = (salarioBase + horaAtividade) / 6;
@@ -46,34 +48,35 @@ public class TeacherHelper {
 				i = 0;
 				mediaAlunos=0;
 				while (i<qtdeAlunos) {
-					System.out.println("Digite a nota do " + (i+1) + "� aluno:");
+					System.out.println("Digite a nota do " + (i+1) + "º aluno:");
 					notaAluno = leitor.nextDouble();
 					mediaAlunos = mediaAlunos + notaAluno;
+					i++;
 				}
 				mediaAlunos = mediaAlunos / qtdeAlunos;
-				System.out.println("A m�dia de notas dos alunos dessa turma � " + mediaAlunos);
+				System.out.println("A média de notas dos alunos dessa turma é " + mediaAlunos);
 				
 				break;
 			case 3:
 				
 				switch(gerador.nextInt(7)) {
 				case 1:
-					System.out.println("Voc� � um professor incr�vel!");
+					System.out.println("Você é um professor incrível!");
 					break;
 				case 2:
 					System.out.println("Que o seu dia seja produtivo!");
 					break;
 				case 3:
-					System.out.println("Que os seus alunos notem a paix�o com que voc� ensina!");
+					System.out.println("Que os seus alunos notem a paixão com que você ensina!");
 					break;
 				case 4:
 					System.out.println("Seu trabalho ajuda a fazer do mundo um lugar melhor!");
 					break;
 				case 5:
-					System.out.println("Quem ensina com o cora��o cria um tesouro para a vida toda!");
+					System.out.println("Quem ensina com o coração cria um tesouro para a vida toda!");
 					break;
 				case 6:
-					System.out.println("Obrigado por se colocar � disposi��o do saber!");
+					System.out.println("Obrigado por se colocar à disposição do saber!");
 					break;
 					
 				}
